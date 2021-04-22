@@ -9,11 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    class ViewController: UIViewController {
-        
         
         @IBOutlet weak var swipeLabel1: UILabel!
-       
+        
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -42,11 +40,8 @@ class ViewController: UIViewController {
             
         }
         
-        }
+}
         
-        
-
-    }
 
  
 

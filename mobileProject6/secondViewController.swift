@@ -8,22 +8,31 @@
 import UIKit
 
 class secondViewController: UIViewController {
-
+    
+    @IBOutlet weak var heroImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        
     
+                
+                view.backgroundColor = .gray
+                setupTap()
+            }
 
-    /*
-    // MARK: - Navigation
+            func setupTap() {
+                let touchDown = UILongPressGestureRecognizer(target:self, action: #selector(didTouchDown))
+                touchDown.minimumPressDuration = 0
+                view.addGestureRecognizer(touchDown)
+            }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+            @objc func didTouchDown(gesture: UILongPressGestureRecognizer) {
+                if gesture.state == .began {
+                    view.backgroundColor = .systemPurple
+                } else if gesture.state == .ended || gesture.state == .cancelled {
+                    view.backgroundColor = .gray
+                }
+            }
+        }
 
-}
